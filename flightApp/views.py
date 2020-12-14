@@ -7,7 +7,6 @@ from blog.forms import PostForm, CommentForm
 from django.views.generic import (TemplateView,ListView,
                                   DetailView,CreateView,
                                   UpdateView,DeleteView)
-
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -56,9 +55,8 @@ class PostDeleteView(LoginRequiredMixin,DeleteView):
     model = Post
     success_url = reverse_lazy('post_list')
 
-#######################################
+
 ## Functions that require a pk match ##
-#######################################
 
 @login_required
 def post_publish(request, pk):
